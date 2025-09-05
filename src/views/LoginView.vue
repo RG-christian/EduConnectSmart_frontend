@@ -80,9 +80,9 @@ const handleLogin = async () => {
     const user = await login(email.value, password.value)
 
     if (user.role === 'admin') {
-      router.push('/dashboard/admin')
+      await router.push('/dashboard/admin')
     } else if (user.role === 'etudiant') {
-      router.push('/dashboard/etudiant')
+      await router.push('/dashboard/etudiant')
     } else {
       error.value = "Rôle inconnu. Accès refusé."
     }
